@@ -3,7 +3,7 @@
 /public/*.blend
 /public/*.blend1
 /public/*.glb
-/public/*.gltf
+# /public/*.gltf
 /public/*.js
 
 
