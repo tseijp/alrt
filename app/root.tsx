@@ -9,7 +9,7 @@ import {
 } from "remix";
 
 export const meta: MetaFunction = () => {
-  return { title: "🚨" };
+  return { title: "Page not found · TSEI.jp🚨" };
 };
 
 export default function App() {
