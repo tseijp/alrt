@@ -28,8 +28,7 @@ const Reflector = (props: MeshProps) => (
 
 export function Stage (props: Props) {
   const { children, ...other } = props
-  const theme = useTheme()
-  const color = theme.dark? '#101010': '#fff'
+  const color = useTheme(_ => _.dark? '#101010': '#fff')
   return (
     <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 4] }} {...other}>
       <color attach="background" args={[color]} />
