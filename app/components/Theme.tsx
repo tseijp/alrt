@@ -4,10 +4,19 @@ import { animated } from 'react-spring'
 
 export const ThemeContext = React.createContext<ThemeProps>({})
 export const ThemeProvider = ThemeContext.Provider
-export const useTheme = () => React.useContext(ThemeContext)
+
+export function useTheme (fun?: undefined): ThemeProps
+export function useTheme <T>(fun: (theme: ThemeProps) => T): T
+export function useTheme <T>(fun?: (theme: ThemeProps) => T) {
+  const isFun = typeof fun === 'function'
+  const theme = React.useContext(ThemeContext)
+  return isFun? fun(theme): theme
+}
+
 export type ThemeProps = Partial<{
   dark: boolean
   mute: boolean
+  alrt: boolean
 }>
 
 export interface Theme {
@@ -18,18 +27,24 @@ export interface Theme {
 }
 
 export const Theme = (props: {theme: ThemeProps, children: React.ReactNode}) => {
-  // return props.children
   const { theme, ...other } = props
   return <ThemeProvider value={theme} {...other} />
 }
 
-Theme.Title = styled(animated.h1)`
+export function useThemeAttrs <Props>(props: Props & {theme: ThemeProps}) {
+  props.theme = useTheme()
+  return props
+}
+
+Theme.Title = styled(animated.h1).attrs(useThemeAttrs)`
   font-size: 8rem;
+  color: #2f2f2f;
   width: 100%;
 `
 
-Theme.Text = styled(animated.div)`
+Theme.Text = styled(animated.div).attrs(useThemeAttrs)`
   font-size: 4rem;
+  color: #2f2f2f;
   width: 100%;
 `
 
@@ -46,17 +61,17 @@ export type FlexProps = Partial<{
   $gap: string
 }>
 
-Theme.Flex = styled.div<FlexProps>`
+Theme.Flex = styled.div.attrs(useThemeAttrs)<FlexProps>`
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
-  ${({$wrap}) => $wrap && `flex-wrap: wrap;`}
-  ${({$gap}) => $gap && `gap: ${$gap};`}
-  ${({$red}) => $red && `background: red;`}
-  ${({$row}) => `flex-direction: ${$row? "row": "column"};`}
-  ${({$w}) => `width: ${$w || '100%'};`}
-  ${({$h}) => `height: ${$h || '100%'};`}
-  ${({$m}) => `margin: ${$m || 'auto'};`}
-  ${({$p}) => `padding: ${$p || 'auto'};`}
+  ${$ => $.$wrap && `flex-wrap: wrap;`}
+  ${$ => $.$gap && `gap: ${$.$gap};`}
+  ${$ => $.$red && `background: red;`}
+  ${$ => `flex-direction: ${$.$row? "row": "column"};`}
+  ${$ => `width: ${$.$w || '100%'};`}
+  ${$ => `height: ${$.$h || '100%'};`}
+  ${$ => `margin: ${$.$m || 'auto'};`}
+  ${$ => `padding: ${$.$p || 'auto'};`}
 `
