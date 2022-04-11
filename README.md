@@ -2,7 +2,7 @@
 
 <div align="center">
 
-###### CAD like Model Viewer in [404.tsei.jp][alrt]
+###### 404 page in [404.tsei.jp][alrt]
 
 [![][status-img]][status]
 [![][code-quality-img]][code-quality]
@@ -29,8 +29,8 @@ __REF__
 ### Installation
 
 ```shell
-git clone https://github.com/tseijp/rben
-cd rben
+git clone https://github.com/tseijp/alrt
+cd alrt
 yarn
 ```
 
