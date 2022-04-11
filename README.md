@@ -1,5 +1,27 @@
 # 🚨 @tsei/alrt
 
+<div align="center">
+
+###### CAD like Model Viewer in [404.tsei.jp][alrt]
+
+[![][status-img]][status]
+[![][code-quality-img]][code-quality]
+[![][license-img]][license]
+
+  <a href="https://404.tsei.jp/">
+    <img src="https://i.imgur.com/raM25u6.gif" width="600" alt="⚙" />
+  </a>
+</div>
+
+[alrt]: https://404.tsei.jp/
+[status]: https://github.com/tseijp/alrt/actions/
+[code-quality]: https://www.codefactor.io/repository/github/tseijp/alrt/
+[license]: https://github.com/tseijp/alrt/
+[status-img]: https://img.shields.io/badge/build-passing-red?style=flat&colorA=000&colorB=000
+[code-quality-img]: https://img.shields.io/codefactor/grade/github/tseijp/alrt?style=flat&colorA=000&colorB=000
+[license-img]: https://img.shields.io/badge/license-MIT-black?style=flat&colorA=000&colorB=000
+
+__REF__
 - [Remix Docs](https://remix.run/docs)
 
 ## Getting Started
