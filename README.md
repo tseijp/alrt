@@ -1,4 +1,4 @@
-# 🚨 @tsei/alrt
+# 🚨@tsei/alrt
 
 <div align="center">
 
