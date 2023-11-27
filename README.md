@@ -1,4 +1,4 @@
-# 🚨@tsei/alrt
+# 🚨alrt
 
 <div align="center">
 
@@ -9,7 +9,7 @@
 [![][license-img]][license]
 
   <a href="https://404.tsei.jp/">
-    <img src="https://i.imgur.com/raM25u6.gif" width="600" alt="⚙" />
+    <img alt="⚙" width="600px" src="https://i.imgur.com/raM25u6.gif" />
   </a>
 </div>
 
