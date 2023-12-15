@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import { useTheme } from 'styled-components'
-import { Html, Environment } from '@react-three/drei'
+import { Html } from '@react-three/drei'
 import { Theme } from '../components/Theme'
 import { Toggle } from '../components/Toggle'
 import { Stage } from '../components/Stage'
@@ -22,7 +22,6 @@ export default function App () {
         </Theme.Flex>
         <Stage style={{position: 'absolute', top: 0, left: 0, zIndex: -1}}>
           <React.Suspense fallback={null}>
-            <Environment preset="city" />
             <Model scale={0.1} alrt={alrt}>
               <Html center transform position-y={1} rotation-x={PI/2}>
                 <Theme.Flex $row $gap="1rem" $w="50rem">
